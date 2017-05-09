@@ -21,7 +21,7 @@ class ImageViewController: UIViewController {
         }
     }
     
-    private var imgURL: String? {
+    var imgURL: String? {
         didSet {
             mainImage = nil
             if view.window != nil {
@@ -30,13 +30,14 @@ class ImageViewController: UIViewController {
         }
     }
     
-  
+    private var activity: UIActivityIndicatorView?
    
     private var mainImage:UIImage? {
         set {
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            activity?.stopAnimating()
         }
         get {
            return imageView.image
@@ -45,16 +46,23 @@ class ImageViewController: UIViewController {
     
     private func fetchImage() {
         if let urlIn = imgURL, let url = URL(string: urlIn) {
-            if let imageData = try? Data(contentsOf: url), let imageContents = UIImage(data: imageData) {
-                mainImage = imageContents
+            DispatchQueue.global(qos: .userInitiated).async {[weak self] in
+                self?.activity?.startAnimating()
+                if let imageData = try? Data(contentsOf: url), urlIn == self?.imgURL {
+                    DispatchQueue.main.async {
+                        if let imageContents = UIImage(data: imageData) {
+                            self?.mainImage = imageContents
+                        }
+                    }
+                }
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgURL = DemoURLS.stanford
         scrollView.delegate = self
+        activity = activitySpinner()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -72,4 +80,13 @@ extension ImageViewController: UIScrollViewDelegate {
         return imageView
     }
 
+    func activitySpinner() -> UIActivityIndicatorView {
+        let activitySpinner = UIActivityIndicatorView(frame: CGRect(x: view.center.x - 25, y: view.center.y - 25, width: 50, height: 50))
+        activitySpinner.activityIndicatorViewStyle = .whiteLarge
+        activitySpinner.backgroundColor = UIColor.black
+        activitySpinner.layer.cornerRadius = 5.0
+        activitySpinner.hidesWhenStopped = true
+        view.addSubview(activitySpinner)
+        return activitySpinner
+    }
 }

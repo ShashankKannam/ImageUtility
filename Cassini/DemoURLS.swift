@@ -17,10 +17,10 @@ struct DemoURLS
             "Earth" : "http://www.nasa.gov/sites/default/files/wave_earth_mosaic_3.jpg",
             "Saturn" : "http://www.nasa.gov/sites/default/files/saturn_collage.jpg"
         ]
-        var urls = Dictionary<String,String>()
+       // var urls = Dictionary<String,String>()
 //        for (key, value) in NASAURLStrings {
 //            urls[key] = URL(string: value)
 //        }
-        return urls
+        return NASAURLStrings
     }()
 }
