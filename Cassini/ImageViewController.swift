@@ -10,10 +10,10 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    private var imgURL: String? {
+    var imgURL: String? {
         didSet {
+            mainImage = nil
             if view.window != nil {
-                mainImage = nil
                 fetchImage()
             }
         }
@@ -23,7 +23,7 @@ class ImageViewController: UIViewController {
    
     private var mainImage:UIImage? {
         set {
-            imageView.image = mainImage
+            imageView.image = newValue
             imageView.sizeToFit()
         }
         get {
