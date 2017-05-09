@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		9835CF5B1EC1961100E9D0C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835CF5A1EC1961100E9D0C3 /* AppDelegate.swift */; };
-		9835CF5D1EC1961100E9D0C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835CF5C1EC1961100E9D0C3 /* ViewController.swift */; };
+		9835CF5D1EC1961100E9D0C3 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835CF5C1EC1961100E9D0C3 /* ImageViewController.swift */; };
 		9835CF601EC1961100E9D0C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9835CF5E1EC1961100E9D0C3 /* Main.storyboard */; };
 		9835CF621EC1961100E9D0C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9835CF611EC1961100E9D0C3 /* Assets.xcassets */; };
 		9835CF651EC1961100E9D0C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9835CF631EC1961100E9D0C3 /* LaunchScreen.storyboard */; };
+		98A8A9BD1EC19D91002CD32D /* DemoURLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8A9BC1EC19D91002CD32D /* DemoURLS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9835CF571EC1961100E9D0C3 /* Cassini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cassini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9835CF5A1EC1961100E9D0C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9835CF5C1EC1961100E9D0C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9835CF5C1EC1961100E9D0C3 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		9835CF5F1EC1961100E9D0C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9835CF611EC1961100E9D0C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9835CF641EC1961100E9D0C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9835CF661EC1961100E9D0C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98A8A9BC1EC19D91002CD32D /* DemoURLS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoURLS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		9835CF591EC1961100E9D0C3 /* Cassini */ = {
 			isa = PBXGroup;
 			children = (
-				9835CF5A1EC1961100E9D0C3 /* AppDelegate.swift */,
-				9835CF5C1EC1961100E9D0C3 /* ViewController.swift */,
+				9835CF6C1EC1962400E9D0C3 /* Supporting Files */,
+				9835CF5C1EC1961100E9D0C3 /* ImageViewController.swift */,
 				9835CF5E1EC1961100E9D0C3 /* Main.storyboard */,
+				98A8A9BC1EC19D91002CD32D /* DemoURLS.swift */,
+			);
+			path = Cassini;
+			sourceTree = "<group>";
+		};
+		9835CF6C1EC1962400E9D0C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9835CF5A1EC1961100E9D0C3 /* AppDelegate.swift */,
 				9835CF611EC1961100E9D0C3 /* Assets.xcassets */,
 				9835CF631EC1961100E9D0C3 /* LaunchScreen.storyboard */,
 				9835CF661EC1961100E9D0C3 /* Info.plist */,
 			);
-			path = Cassini;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9835CF5D1EC1961100E9D0C3 /* ViewController.swift in Sources */,
+				9835CF5D1EC1961100E9D0C3 /* ImageViewController.swift in Sources */,
 				9835CF5B1EC1961100E9D0C3 /* AppDelegate.swift in Sources */,
+				98A8A9BD1EC19D91002CD32D /* DemoURLS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +313,7 @@
 				9835CF6B1EC1961100E9D0C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
