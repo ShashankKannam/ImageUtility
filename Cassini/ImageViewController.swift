@@ -10,7 +10,18 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    var imgURL: String? {
+    fileprivate var imageView = UIImageView()
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.contentSize = imageView.frame.size
+            scrollView.addSubview(imageView)
+            scrollView.maximumZoomScale = 1.0
+            scrollView.minimumZoomScale = 0.03
+        }
+    }
+    
+    private var imgURL: String? {
         didSet {
             mainImage = nil
             if view.window != nil {
@@ -19,12 +30,13 @@ class ImageViewController: UIViewController {
         }
     }
     
-    private var imageView = UIImageView()
+  
    
     private var mainImage:UIImage? {
         set {
             imageView.image = newValue
             imageView.sizeToFit()
+            scrollView?.contentSize = imageView.frame.size
         }
         get {
            return imageView.image
@@ -41,8 +53,8 @@ class ImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(imageView)
         imgURL = DemoURLS.stanford
+        scrollView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,5 +63,13 @@ class ImageViewController: UIViewController {
             fetchImage()
         }
     }
+
 }
 
+extension ImageViewController: UIScrollViewDelegate {
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+
+}

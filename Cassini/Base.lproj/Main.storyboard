@@ -20,11 +20,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ix-6Z-F5G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2ix-6Z-F5G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NdB-Eg-HjV"/>
+                            <constraint firstItem="2ix-6Z-F5G" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="PZY-Y4-b7Z"/>
+                            <constraint firstItem="2ix-6Z-F5G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SMN-Jg-rZW"/>
+                            <constraint firstAttribute="trailing" secondItem="2ix-6Z-F5G" secondAttribute="trailing" id="sRY-Pv-RVv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="2ix-6Z-F5G" id="6H8-9x-oJb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-343.19999999999999" y="158.77061469265368"/>
         </scene>
     </scenes>
 </document>
